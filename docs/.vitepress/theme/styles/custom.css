@@ -1,0 +1,267 @@
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-layout-max-width: 1680px;
+  --custom-breadcrumb-background-color: #f6f6f7;
+  --custom-breadcrumb-text-color: #000;
+  --custom-breadcrumb-border-color: #425bc5;
+}
+
+html.dark {
+  --custom-breadcrumb-background-color: #272a2f;
+  --custom-breadcrumb-text-color: #fff;
+  --custom-breadcrumb-border-color: #ffd368;
+}
+
+/**
+ * VPDoc.vue
+ * -------------------------------------------------------------------------- */
+
+.VPDoc.has-aside .content-container {
+  max-width: 888px !important;
+}
+
+/**
+ * VPSidebar.vue
+ * -------------------------------------------------------------------------- */
+
+.VPSidebar::-webkit-scrollbar {
+  width: 8px; /* Narrow scrollbar for a minimalistic look */
+}
+
+.VPSidebar::-webkit-scrollbar-track {
+  background: transparent; /* Keeps the track clean and unobtrusive */
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0); /* Initial state is fully transparent */
+  border-radius: 4px; /* Rounded corners for the thumb */
+  transition: background-color 0.8s cubic-bezier(0.33, 1, 0.68, 1); /* Smooth transition for background color changes */
+}
+
+.VPSidebar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Appears only on hover with semi-transparency */
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Darker on thumb hover for better visibility */
+}
+
+/* Scrollbar styling for Firefox */
+.VPSidebar {
+  scrollbar-width: thin; /* 'auto' or 'thin' for minimal visual impact */
+  scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Initially transparent, invisible scrollbar */
+}
+
+.VPSidebar:hover {
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Thumb appears on hover */
+}
+
+/**
+ * VPSidebarItem.vue
+ * -------------------------------------------------------------------------- */
+
+/* Everything under this comment is for the "HTML" banners on the markdown pages */
+
+ul.breadcrumbs[data-v-1536bbb2] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the breadcrumbs container */
+  margin: 25px auto 0; /* Center horizontally by setting auto margins */
+  padding: 0;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+ul.breadcrumbs li[data-v-1536bbb2] {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  transition: 0.3s ease;
+  max-width: 300px;
+}
+
+ul.breadcrumbs li:hover a[data-v-1536bbb2] {
+  cursor: default;
+}
+
+ul.breadcrumbs li[data-v-1536bbb2]:before {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: -1px;
+  z-index: 10;
+  border-left: 10px solid var(--custom-breadcrumb-background-color);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  transition: 0.3s ease;
+}
+
+ul.breadcrumbs li[data-v-1536bbb2]:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -1px;
+  z-index: 5;
+  border-left: 10px solid var(--custom-breadcrumb-border-color);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+
+ul.breadcrumbs li.first[data-v-1536bbb2] {
+  border-left: none;
+}
+
+ul.breadcrumbs span[small-font] {
+  display: block;
+  font-size: 12px;
+  line-height: 40px;
+  color: var(--custom-breadcrumb-text-color);
+  padding: 2px 30px 2px 30px;
+  text-decoration: none;
+  background: var(--custom-breadcrumb-background-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-width: 200px; */
+  transition: 0.3s ease;
+}
+
+ul.breadcrumbs span[med-font] {
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+  color: var(--custom-breadcrumb-text-color);
+  padding: 2px 30px 2px 30px;
+  text-decoration: none;
+  background: var(--custom-breadcrumb-background-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-width: 200px; */
+  transition: 0.3s ease;
+}
+
+ul.breadcrumbs span[large-font] {
+  display: block;
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--custom-breadcrumb-text-color);
+  padding: 2px 30px 2px 30px;
+  text-decoration: none;
+  background: var(--custom-breadcrumb-background-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-width: 200px; */
+  transition: 0.3s ease;
+}
+
+ul.breadcrumbs li.last[data-v-1536bbb2]:before {
+  display: none;
+}
+
+ul.breadcrumbs li.last[data-v-1536bbb2]:after {
+  display: none;
+}
+
+ul.breadcrumbs li.last span[data-v-1536bbb2] {
+  padding-right: 20px;
+  border-radius: 0 40px 40px 0;
+  border-right: 2px solid var(--custom-breadcrumb-border-color);
+}
+
+ul.breadcrumbs li.last span[large-font] {
+  padding-right: 20px;
+  border-radius: 0 40px 40px 0;
+  border-right: 2px solid var(--custom-breadcrumb-border-color);
+}
+
+ul.breadcrumbs li.last span[med-font] {
+  padding-right: 20px;
+  border-radius: 0 40px 40px 0;
+  border-right: 2px solid var(--custom-breadcrumb-border-color);
+}
+
+ul.breadcrumbs li.last span[small-font] {
+  padding-right: 20px;
+  border-radius: 0 40px 40px 0;
+  border-right: 2px solid var(--custom-breadcrumb-border-color);
+}
+
+ul.breadcrumbs li.first span[data-v-1536bbb2] {
+  padding-right: 20px;
+  border-radius: 20px 0 0 20px;
+  border-left: 2px solid var(--custom-breadcrumb-border-color);
+}
+
+ul.breadcrumbs li span[data-v-1536bbb2] {
+  display: block;
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--custom-breadcrumb-text-color);
+  padding: 2px 30px 2px 30px;
+  text-decoration: none;
+  background: var(--custom-breadcrumb-background-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-width: 200px; */
+  transition: 0.3s ease;
+}
+
+/* Table CSS - If break contact vcr :) */
+
+@media only screen and (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
